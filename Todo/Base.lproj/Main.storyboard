@@ -32,7 +32,7 @@
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="addTodo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ogQ-QC-zRq"/>
+                                    <action selector="addTodo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v30-mr-XUs"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wp5-9b-mv8">
@@ -44,13 +44,10 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EuK-h9-CDF">
-                                <rect key="frame" x="20" y="200" width="374" height="662"/>
+                                <rect key="frame" x="20" y="197" width="374" height="665"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="662" id="PLr-p6-L3G"/>
-                                </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="54" id="yed-nx-lKD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoCell" rowHeight="54" id="yed-nx-lKD" userLabel="TodoCell" customClass="TodoCell" customModule="Todo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yed-nx-lKD" id="eXQ-wu-es6">
@@ -82,21 +79,27 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="Szf-Tq-mxx" secondAttribute="trailing" constant="10" id="sc7-Ht-znt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="itemLbl" destination="x8N-yu-lNF" id="ZSf-YO-23X"/>
+                                            <outlet property="priorityView" destination="Szf-Tq-mxx" id="DDh-8m-8lY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EuK-h9-CDF" firstAttribute="top" secondItem="Wp5-9b-mv8" secondAttribute="bottom" constant="33" id="1qn-X8-CE2"/>
                             <constraint firstItem="sjC-xM-PYK" firstAttribute="top" secondItem="W26-ub-lKB" secondAttribute="bottom" constant="12" id="7qr-rb-3RS"/>
+                            <constraint firstItem="Wp5-9b-mv8" firstAttribute="top" secondItem="sjC-xM-PYK" secondAttribute="bottom" constant="17" id="AHf-yC-zf8"/>
                             <constraint firstItem="Wp5-9b-mv8" firstAttribute="trailing" secondItem="sjC-xM-PYK" secondAttribute="trailing" id="Bge-Yp-HWh"/>
                             <constraint firstItem="EuK-h9-CDF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EXe-by-6da"/>
                             <constraint firstItem="W26-ub-lKB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="FvK-dv-NrT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sjC-xM-PYK" secondAttribute="trailing" constant="20" id="Ife-LE-MUK"/>
                             <constraint firstItem="Wp5-9b-mv8" firstAttribute="leading" secondItem="sjC-xM-PYK" secondAttribute="leading" id="MGF-OA-UgP"/>
                             <constraint firstItem="sjC-xM-PYK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="N46-J6-0BB"/>
+                            <constraint firstItem="EuK-h9-CDF" firstAttribute="top" secondItem="Wp5-9b-mv8" secondAttribute="bottom" constant="30" id="UJO-Oi-sKk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W26-ub-lKB" secondAttribute="trailing" constant="32" id="UdF-Yy-HpM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EuK-h9-CDF" secondAttribute="trailing" constant="20" id="d8o-nG-dXQ"/>
                             <constraint firstItem="EuK-h9-CDF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uGY-FZ-XH6"/>
@@ -104,8 +107,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="prioritySegment" destination="Wp5-9b-mv8" id="5FA-m6-aGz"/>
-                        <outlet property="todoItemTxt" destination="sjC-xM-PYK" id="Yn1-fx-PgX"/>
+                        <outlet property="prioritySegment" destination="Wp5-9b-mv8" id="vpv-5E-0Kd"/>
+                        <outlet property="todoItemTxt" destination="sjC-xM-PYK" id="eJa-fp-0bb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

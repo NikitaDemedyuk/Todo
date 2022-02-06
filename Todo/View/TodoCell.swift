@@ -9,6 +9,8 @@ import UIKit
 
 class TodoCell: UITableViewCell {
 
+    @IBOutlet weak var itemLbl: UILabel!
+    @IBOutlet weak var priorityView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
